@@ -7,8 +7,8 @@ public class Terrorist : MonoBehaviour
     [SerializeField] Transform weapon;
     [SerializeField] ParticleSystem projectileParticles;
     [SerializeField] float range = 15f;
-    public Transform target;
-    public Limousine limo;
+    [SerializeField] Transform target;
+    [SerializeField] Limousine limo;
     private void Start()
     {
         FindTheLimousine();

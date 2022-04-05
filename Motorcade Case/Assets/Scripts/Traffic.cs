@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class Traffic : MonoBehaviour
 {
-    public float movementSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] float movementSpeed;
     void Update()
     {
         ForwardMovement();
@@ -22,9 +15,6 @@ public class Traffic : MonoBehaviour
         transform.Translate(0f, 0f, movementSpeed * Time.deltaTime);
     }
 
-    
-
-    
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("Hit " + other.gameObject.name);
