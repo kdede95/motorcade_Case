@@ -28,11 +28,8 @@ public class Traffic : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Debug.Log("Hit " + other.gameObject.name);
-        if (other.gameObject.GetComponent<IDamageable>() != null)
+        if (other.gameObject.GetComponent<Damageable>() != null)
         {
-            IDamageable dmg = other.gameObject.GetComponent<IDamageable>();
-            Debug.Log("Security car hit!");
-            dmg.TakeDamage();
             Destroy(this.gameObject);
         }
     }
