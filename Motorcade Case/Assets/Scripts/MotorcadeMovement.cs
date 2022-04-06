@@ -31,7 +31,7 @@ public class MotorcadeMovement : MonoBehaviour
         {
             return;
         }
-        if ((Input.GetKeyDown(KeyCode.A)||pressedA) && !pressedD)
+        if ((Input.GetAxis("Horizontal")<0||pressedA) && !pressedD)
         {
             if (!pressedA)
             {
@@ -50,7 +50,7 @@ public class MotorcadeMovement : MonoBehaviour
                 pressedA = false;
             }
         }
-        else if ((Input.GetKeyDown(KeyCode.D) || pressedD) && !pressedA )
+        else if ((Input.GetAxis("Horizontal") > 0 || pressedD) && !pressedA )
         {
             if (!pressedD)
             {
