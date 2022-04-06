@@ -209,6 +209,8 @@ MonoBehaviour:
   weapon: {fileID: 6253190861420666742}
   projectileParticles: {fileID: 7779063784730897570}
   range: 40
+  target: {fileID: 0}
+  limo: {fileID: 0}
 --- !u!1 &6882101619221854111
 GameObject:
   m_ObjectHideFlags: 0

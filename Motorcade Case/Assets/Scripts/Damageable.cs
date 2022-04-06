@@ -4,14 +4,14 @@ using UnityEngine;
 
 public abstract class Damageable : MonoBehaviour
 {
-    public int health;
-    public void TakeDamage()
+    [SerializeField] int health;
+    void TakeDamage()
     {
         health--;
         if (health<=0)
         {
             Debug.Log("" + gameObject.name + " has been destroyed.");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

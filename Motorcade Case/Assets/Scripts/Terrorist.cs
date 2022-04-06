@@ -8,10 +8,8 @@ public class Terrorist : MonoBehaviour
     [SerializeField] ParticleSystem projectileParticles;
     [SerializeField] float range = 15f;
     [SerializeField] Transform target;
-    [SerializeField] Limousine limo;
     private void Start()
     {
-        FindTheLimousine();
     }
 
     void Update()
@@ -19,15 +17,6 @@ public class Terrorist : MonoBehaviour
         AimWeapon();
     }
 
-    private void FindTheLimousine()
-    {
-        limo = FindObjectOfType<Limousine>();
-        if (limo!=null)
-        {
-            target = limo.transform;
-        }
-       
-    }
 
     private void AimWeapon()
     {
@@ -39,7 +28,7 @@ public class Terrorist : MonoBehaviour
 
             transform.LookAt(target);
 
-            if (targetDistance < range && limo.isActiveAndEnabled)
+            if (targetDistance < range && target.gameObject.activeSelf)
             {
                 Attack(true);
             }
